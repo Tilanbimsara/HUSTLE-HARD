@@ -7,7 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		869C0A752A149365009FDCA2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869C0A742A149365009FDCA2 /* HomeViewController.swift */; };
+		869C0A752A149365009FDCA2 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869C0A742A149365009FDCA2 /* MainTabBarViewController.swift */; };
+		869C0A772A149C84009FDCA2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869C0A762A149C84009FDCA2 /* HomeViewController.swift */; };
+		869C0A792A149CBE009FDCA2 /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869C0A782A149CBE009FDCA2 /* ProgressViewController.swift */; };
+		869C0A7B2A149CD8009FDCA2 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869C0A7A2A149CD8009FDCA2 /* ScheduleViewController.swift */; };
+		869C0A7D2A149CEB009FDCA2 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869C0A7C2A149CEB009FDCA2 /* ProfileViewController.swift */; };
 		AAF40F332A0FFC140050245F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF40F322A0FFC140050245F /* AppDelegate.swift */; };
 		AAF40F352A0FFC140050245F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF40F342A0FFC140050245F /* SceneDelegate.swift */; };
 		AAF40F372A0FFC140050245F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF40F362A0FFC140050245F /* ViewController.swift */; };
@@ -42,7 +46,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		869C0A742A149365009FDCA2 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		869C0A742A149365009FDCA2 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
+		869C0A762A149C84009FDCA2 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		869C0A782A149CBE009FDCA2 /* ProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
+		869C0A7A2A149CD8009FDCA2 /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
+		869C0A7C2A149CEB009FDCA2 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		AAF40F2F2A0FFC140050245F /* HUSTLE HARD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HUSTLE HARD.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAF40F322A0FFC140050245F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AAF40F342A0FFC140050245F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -130,7 +138,11 @@
 				AAF40F9F2A122B850050245F /* SelectBirthdayViewController.swift */,
 				AAF40FA12A1230060050245F /* SelectHeightViewController.swift */,
 				AAF40FA32A123C030050245F /* SelectWeightViewController.swift */,
-				869C0A742A149365009FDCA2 /* HomeViewController.swift */,
+				869C0A742A149365009FDCA2 /* MainTabBarViewController.swift */,
+				869C0A762A149C84009FDCA2 /* HomeViewController.swift */,
+				869C0A782A149CBE009FDCA2 /* ProgressViewController.swift */,
+				869C0A7A2A149CD8009FDCA2 /* ScheduleViewController.swift */,
+				869C0A7C2A149CEB009FDCA2 /* ProfileViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -282,13 +294,17 @@
 				AAF40F372A0FFC140050245F /* ViewController.swift in Sources */,
 				AAF40FA42A123C030050245F /* SelectWeightViewController.swift in Sources */,
 				AAF40F792A10061B0050245F /* SelectGenderViewController.swift in Sources */,
+				869C0A792A149CBE009FDCA2 /* ProgressViewController.swift in Sources */,
+				869C0A7B2A149CD8009FDCA2 /* ScheduleViewController.swift in Sources */,
 				AAF40F332A0FFC140050245F /* AppDelegate.swift in Sources */,
 				AAF40F6F2A1001570050245F /* FontManager.swift in Sources */,
 				AAF40FA02A122B850050245F /* SelectBirthdayViewController.swift in Sources */,
-				869C0A752A149365009FDCA2 /* HomeViewController.swift in Sources */,
+				869C0A752A149365009FDCA2 /* MainTabBarViewController.swift in Sources */,
 				AAF40F352A0FFC140050245F /* SceneDelegate.swift in Sources */,
 				AAF40F9C2A1018230050245F /* View.swift in Sources */,
+				869C0A7D2A149CEB009FDCA2 /* ProfileViewController.swift in Sources */,
 				AAF40F7C2A1006DA0050245F /* Color.swift in Sources */,
+				869C0A772A149C84009FDCA2 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

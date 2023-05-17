@@ -23,7 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
       //  window.rootViewController =  UINavigationController(rootViewController: SelectHeightViewController())
         
-        window.rootViewController =  UINavigationController(rootViewController: HomeViewController())
+        window.rootViewController =  UINavigationController(rootViewController: MainTabBarViewController())
         
         self.window = window
     }
