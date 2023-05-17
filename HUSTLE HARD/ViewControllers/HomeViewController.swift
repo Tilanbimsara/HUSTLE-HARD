@@ -7,103 +7,121 @@
 import UIKit
 import SnapKit
 
-class HomeViewController: UIViewController {
-
-    let buttonImages = ["bt1", "bt2", "bt3", "bt4", "bt5"] // Replace with your actual button image names
-    var buttonImageViews: [UIImageView] = []
+class HomeViewController: UIViewController, UIScrollViewDelegate {
     var scrollView: UIScrollView!
     var pageControl: UIPageControl!
-
+    var titleLabel: UILabel!
+    var imageViews: [UIImageView] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        createButtonImageViews()
-        configureScrollView()
-        configurePageControl()
+        createImageSlideshow()
     }
-
+    
     func setupUI() {
         view.backgroundColor = .white
-
+        
         let headerView = UIView()
         headerView.backgroundColor = .systemYellow
         view.addSubview(headerView)
-
+        
         headerView.snp.makeConstraints { make in
             make.top.left.right.equalToSuperview()
             make.height.equalTo(view.snp.height).multipliedBy(0.4)
         }
-
+        
         let logoImageView = UIImageView()
         logoImageView.image = UIImage(named: "logo")
         logoImageView.contentMode = .scaleAspectFill
         logoImageView.clipsToBounds = true
         headerView.addSubview(logoImageView)
-
+        
         logoImageView.snp.makeConstraints { make in
             make.centerX.centerY.equalToSuperview()
             make.width.equalTo(headerView.snp.width)
             make.height.equalTo(headerView.snp.height)
         }
-
+        
+        titleLabel = UILabel()
+        titleLabel.text = "Trending"
+        titleLabel.font = UIFont.boldSystemFont(ofSize: 24)
+        titleLabel.textAlignment = .center
+        view.addSubview(titleLabel)
+        
+        titleLabel.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(headerView.snp.bottom).offset(20)
+        }
+        
+        let startButton = UIButton(type: .system)
+        startButton.setTitle("Start Workout", for: .normal)
+        startButton.titleLabel?.font = UIFont.systemFont(ofSize: 20)
+        startButton.addTarget(self, action: #selector(startButtonTapped), for: .touchUpInside)
+        view.addSubview(startButton)
+        
+        startButton.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(titleLabel.snp.bottom).offset(50)
+            make.width.equalTo(200)
+            make.height.equalTo(50)
+        }
+    }
+    
+    func createImageSlideshow() {
         scrollView = UIScrollView()
         scrollView.isPagingEnabled = true
         scrollView.showsHorizontalScrollIndicator = false
+        scrollView.delegate = self
         view.addSubview(scrollView)
-
+        
         scrollView.snp.makeConstraints { make in
-            make.top.equalTo(headerView.snp.bottom).offset(20)
+            make.top.equalTo(titleLabel.snp.bottom).offset(20)
             make.leading.trailing.equalToSuperview()
             make.height.equalTo(200) // Adjust the height as needed
         }
-    }
-
-    func createButtonImageViews() {
-        for imageName in buttonImages {
+        
+        let imageNames = ["logooo", "ex2", "logoo"] // Replace with your actual image names
+        
+        for imageName in imageNames {
             let imageView = UIImageView(image: UIImage(named: imageName))
             imageView.contentMode = .scaleAspectFill
             imageView.clipsToBounds = true
-            buttonImageViews.append(imageView)
-        }
-    }
-
-    func configureScrollView() {
-        let buttonSize = CGSize(width: 120, height: 120) // Adjust the button size as needed
-        let buttonSpacing: CGFloat = 20 // Adjust the spacing between buttons as needed
-
-        for (index, imageView) in buttonImageViews.enumerated() {
-            let buttonView = UIView()
-            buttonView.addSubview(imageView)
-
+            imageView.translatesAutoresizingMaskIntoConstraints = false
+            
+            scrollView.addSubview(imageView)
+            imageViews.append(imageView)
+            
             imageView.snp.makeConstraints { make in
-                make.center.equalToSuperview()
-                make.size.equalTo(buttonSize)
-            }
-
-            scrollView.addSubview(buttonView)
-
-            buttonView.snp.makeConstraints { make in
                 make.top.bottom.equalToSuperview()
-                make.width.equalTo(buttonSize.width)
-                make.leading.equalToSuperview().offset(CGFloat(index) * (buttonSize.width + buttonSpacing))
+                make.leading.equalTo(imageViews.last?.snp.trailing ?? scrollView.snp.leading)
+                make.width.equalTo(scrollView.snp.width)
+                make.height.equalTo(scrollView.snp.height)
             }
         }
-
-        let contentWidth = CGFloat(buttonImageViews.count) * (buttonSize.width + buttonSpacing) - buttonSpacing
+        
+        let contentWidth = CGFloat(imageViews.count) * view.bounds.width
         scrollView.contentSize = CGSize(width: contentWidth, height: 200)
-    }
-
-    func configurePageControl() {
+        
         pageControl = UIPageControl()
-        pageControl.numberOfPages = buttonImageViews.count
+        pageControl.numberOfPages = imageNames.count
         pageControl.currentPage = 0
         pageControl.pageIndicatorTintColor = .gray
         pageControl.currentPageIndicatorTintColor = .black
         view.addSubview(pageControl)
-
+        
         pageControl.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalTo(scrollView.snp.bottom).offset(10)
         }
+    }
+    
+    @objc func startButtonTapped() {
+        // Handle start button action
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let pageIndex = Int(scrollView.contentOffset.x / scrollView.frame.width)
+        pageControl.currentPage = pageIndex
     }
 }
