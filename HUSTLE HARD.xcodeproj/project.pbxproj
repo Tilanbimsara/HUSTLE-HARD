@@ -7,119 +7,219 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		860945CE2A125DC100F4C39B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860945CD2A125DC100F4C39B /* HomeViewController.swift */; };
-		860945D02A12603100F4C39B /* MydetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860945CF2A12603100F4C39B /* MydetailsViewController.swift */; };
-		860945D32A12607400F4C39B /* SeachViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860945D22A12607400F4C39B /* SeachViewController.swift */; };
-		860945D52A1260FE00F4C39B /* DoneExrciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860945D42A1260FE00F4C39B /* DoneExrciseViewController.swift */; };
-		866AC8512A113FB700A85AB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866AC8502A113FB700A85AB5 /* AppDelegate.swift */; };
-		866AC8532A113FB700A85AB5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866AC8522A113FB700A85AB5 /* SceneDelegate.swift */; };
-		866AC8552A113FB700A85AB5 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866AC8542A113FB700A85AB5 /* MainTabBarViewController.swift */; };
-		866AC85A2A113FB900A85AB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 866AC8592A113FB900A85AB5 /* Assets.xcassets */; };
-		866AC85D2A113FB900A85AB5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 866AC85B2A113FB900A85AB5 /* LaunchScreen.storyboard */; };
+		AAF40F332A0FFC140050245F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF40F322A0FFC140050245F /* AppDelegate.swift */; };
+		AAF40F352A0FFC140050245F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF40F342A0FFC140050245F /* SceneDelegate.swift */; };
+		AAF40F372A0FFC140050245F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF40F362A0FFC140050245F /* ViewController.swift */; };
+		AAF40F3C2A0FFC150050245F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAF40F3B2A0FFC150050245F /* Assets.xcassets */; };
+		AAF40F3F2A0FFC150050245F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAF40F3D2A0FFC150050245F /* LaunchScreen.storyboard */; };
+		AAF40F4B2A1000410050245F /* Poppins-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AAF40F4A2A1000410050245F /* Poppins-Black.ttf */; };
+		AAF40F5D2A1000690050245F /* Poppins-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AAF40F4C2A1000680050245F /* Poppins-MediumItalic.ttf */; };
+		AAF40F5E2A1000690050245F /* Poppins-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AAF40F4D2A1000680050245F /* Poppins-ExtraLight.ttf */; };
+		AAF40F5F2A1000690050245F /* Poppins-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AAF40F4E2A1000680050245F /* Poppins-ExtraBoldItalic.ttf */; };
+		AAF40F602A1000690050245F /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AAF40F4F2A1000680050245F /* Poppins-Light.ttf */; };
+		AAF40F612A1000690050245F /* Poppins-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AAF40F502A1000680050245F /* Poppins-ExtraLightItalic.ttf */; };
+		AAF40F622A1000690050245F /* Poppins-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AAF40F512A1000680050245F /* Poppins-LightItalic.ttf */; };
+		AAF40F632A1000690050245F /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AAF40F522A1000680050245F /* Poppins-Regular.ttf */; };
+		AAF40F642A1000690050245F /* Poppins-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AAF40F532A1000680050245F /* Poppins-SemiBoldItalic.ttf */; };
+		AAF40F652A1000690050245F /* Poppins-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AAF40F542A1000680050245F /* Poppins-ExtraBold.ttf */; };
+		AAF40F662A1000690050245F /* Poppins-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AAF40F552A1000680050245F /* Poppins-BlackItalic.ttf */; };
+		AAF40F672A1000690050245F /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AAF40F562A1000680050245F /* Poppins-Medium.ttf */; };
+		AAF40F682A1000690050245F /* Poppins-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AAF40F572A1000680050245F /* Poppins-BoldItalic.ttf */; };
+		AAF40F692A1000690050245F /* Poppins-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AAF40F582A1000680050245F /* Poppins-Thin.ttf */; };
+		AAF40F6A2A1000690050245F /* Poppins-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AAF40F592A1000680050245F /* Poppins-ThinItalic.ttf */; };
+		AAF40F6B2A1000690050245F /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AAF40F5A2A1000680050245F /* Poppins-Bold.ttf */; };
+		AAF40F6C2A1000690050245F /* Poppins-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AAF40F5B2A1000690050245F /* Poppins-Italic.ttf */; };
+		AAF40F6D2A1000690050245F /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AAF40F5C2A1000690050245F /* Poppins-SemiBold.ttf */; };
+		AAF40F6F2A1001570050245F /* FontManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF40F6E2A1001570050245F /* FontManager.swift */; };
+		AAF40F772A10037B0050245F /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = AAF40F762A10037B0050245F /* SnapKit */; };
+		AAF40F792A10061B0050245F /* SelectGenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF40F782A10061B0050245F /* SelectGenderViewController.swift */; };
+		AAF40F7C2A1006DA0050245F /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF40F7B2A1006DA0050245F /* Color.swift */; };
+		AAF40F9C2A1018230050245F /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF40F9B2A1018230050245F /* View.swift */; };
+		AAF40FA02A122B850050245F /* SelectBirthdayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF40F9F2A122B850050245F /* SelectBirthdayViewController.swift */; };
+		AAF40FA22A1230060050245F /* SelectHeightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF40FA12A1230060050245F /* SelectHeightViewController.swift */; };
+		AAF40FA42A123C030050245F /* SelectWeightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF40FA32A123C030050245F /* SelectWeightViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		860945CD2A125DC100F4C39B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		860945CF2A12603100F4C39B /* MydetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MydetailsViewController.swift; sourceTree = "<group>"; };
-		860945D22A12607400F4C39B /* SeachViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeachViewController.swift; sourceTree = "<group>"; };
-		860945D42A1260FE00F4C39B /* DoneExrciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneExrciseViewController.swift; sourceTree = "<group>"; };
-		866AC84D2A113FB700A85AB5 /* HUSTLE HARD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HUSTLE HARD.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		866AC8502A113FB700A85AB5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		866AC8522A113FB700A85AB5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		866AC8542A113FB700A85AB5 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
-		866AC8592A113FB900A85AB5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		866AC85C2A113FB900A85AB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		866AC85E2A113FB900A85AB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AAF40F2F2A0FFC140050245F /* HUSTLE HARD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HUSTLE HARD.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AAF40F322A0FFC140050245F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AAF40F342A0FFC140050245F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		AAF40F362A0FFC140050245F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AAF40F3B2A0FFC150050245F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AAF40F3E2A0FFC150050245F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AAF40F402A0FFC150050245F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AAF40F4A2A1000410050245F /* Poppins-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Black.ttf"; sourceTree = "<group>"; };
+		AAF40F4C2A1000680050245F /* Poppins-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-MediumItalic.ttf"; sourceTree = "<group>"; };
+		AAF40F4D2A1000680050245F /* Poppins-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraLight.ttf"; sourceTree = "<group>"; };
+		AAF40F4E2A1000680050245F /* Poppins-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		AAF40F4F2A1000680050245F /* Poppins-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Light.ttf"; sourceTree = "<group>"; };
+		AAF40F502A1000680050245F /* Poppins-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		AAF40F512A1000680050245F /* Poppins-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-LightItalic.ttf"; sourceTree = "<group>"; };
+		AAF40F522A1000680050245F /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		AAF40F532A1000680050245F /* Poppins-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		AAF40F542A1000680050245F /* Poppins-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraBold.ttf"; sourceTree = "<group>"; };
+		AAF40F552A1000680050245F /* Poppins-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-BlackItalic.ttf"; sourceTree = "<group>"; };
+		AAF40F562A1000680050245F /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
+		AAF40F572A1000680050245F /* Poppins-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-BoldItalic.ttf"; sourceTree = "<group>"; };
+		AAF40F582A1000680050245F /* Poppins-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Thin.ttf"; sourceTree = "<group>"; };
+		AAF40F592A1000680050245F /* Poppins-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ThinItalic.ttf"; sourceTree = "<group>"; };
+		AAF40F5A2A1000680050245F /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
+		AAF40F5B2A1000690050245F /* Poppins-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Italic.ttf"; sourceTree = "<group>"; };
+		AAF40F5C2A1000690050245F /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
+		AAF40F6E2A1001570050245F /* FontManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontManager.swift; sourceTree = "<group>"; };
+		AAF40F782A10061B0050245F /* SelectGenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGenderViewController.swift; sourceTree = "<group>"; };
+		AAF40F7B2A1006DA0050245F /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		AAF40F9B2A1018230050245F /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		AAF40F9F2A122B850050245F /* SelectBirthdayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectBirthdayViewController.swift; sourceTree = "<group>"; };
+		AAF40FA12A1230060050245F /* SelectHeightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectHeightViewController.swift; sourceTree = "<group>"; };
+		AAF40FA32A123C030050245F /* SelectWeightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectWeightViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		866AC84A2A113FB700A85AB5 /* Frameworks */ = {
+		AAF40F2C2A0FFC140050245F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAF40F772A10037B0050245F /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		860945CC2A125D8900F4C39B /* Controllers */ = {
+		AAF40F262A0FFC140050245F = {
 			isa = PBXGroup;
 			children = (
-				860945CD2A125DC100F4C39B /* HomeViewController.swift */,
-				860945CF2A12603100F4C39B /* MydetailsViewController.swift */,
-				860945D22A12607400F4C39B /* SeachViewController.swift */,
-				860945D42A1260FE00F4C39B /* DoneExrciseViewController.swift */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		866AC8442A113FB700A85AB5 = {
-			isa = PBXGroup;
-			children = (
-				866AC84F2A113FB700A85AB5 /* HUSTLE HARD */,
-				866AC84E2A113FB700A85AB5 /* Products */,
+				AAF40F312A0FFC140050245F /* HUSTLE HARD */,
+				AAF40F302A0FFC140050245F /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		866AC84E2A113FB700A85AB5 /* Products */ = {
+		AAF40F302A0FFC140050245F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				866AC84D2A113FB700A85AB5 /* HUSTLE HARD.app */,
+				AAF40F2F2A0FFC140050245F /* HUSTLE HARD.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		866AC84F2A113FB700A85AB5 /* HUSTLE HARD */ = {
+		AAF40F312A0FFC140050245F /* HUSTLE HARD */ = {
 			isa = PBXGroup;
 			children = (
-				860945CC2A125D8900F4C39B /* Controllers */,
-				866AC8502A113FB700A85AB5 /* AppDelegate.swift */,
-				866AC8522A113FB700A85AB5 /* SceneDelegate.swift */,
-				866AC8542A113FB700A85AB5 /* MainTabBarViewController.swift */,
-				866AC8592A113FB900A85AB5 /* Assets.xcassets */,
-				866AC85B2A113FB900A85AB5 /* LaunchScreen.storyboard */,
-				866AC85E2A113FB900A85AB5 /* Info.plist */,
+				AAF40F7A2A1006CE0050245F /* Extension */,
+				AAF40F492A1000290050245F /* Fonts */,
+				AAF40F482A0FFEF80050245F /* Models */,
+				AAF40F472A0FFEEF0050245F /* Managers */,
+				AAF40F462A0FFEE60050245F /* ViewControllers */,
+				AAF40F322A0FFC140050245F /* AppDelegate.swift */,
+				AAF40F342A0FFC140050245F /* SceneDelegate.swift */,
+				AAF40F3B2A0FFC150050245F /* Assets.xcassets */,
+				AAF40F3D2A0FFC150050245F /* LaunchScreen.storyboard */,
+				AAF40F402A0FFC150050245F /* Info.plist */,
 			);
 			path = "HUSTLE HARD";
+			sourceTree = "<group>";
+		};
+		AAF40F462A0FFEE60050245F /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				AAF40F362A0FFC140050245F /* ViewController.swift */,
+				AAF40F782A10061B0050245F /* SelectGenderViewController.swift */,
+				AAF40F9F2A122B850050245F /* SelectBirthdayViewController.swift */,
+				AAF40FA12A1230060050245F /* SelectHeightViewController.swift */,
+				AAF40FA32A123C030050245F /* SelectWeightViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		AAF40F472A0FFEEF0050245F /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				AAF40F6E2A1001570050245F /* FontManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		AAF40F482A0FFEF80050245F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		AAF40F492A1000290050245F /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				AAF40F552A1000680050245F /* Poppins-BlackItalic.ttf */,
+				AAF40F5A2A1000680050245F /* Poppins-Bold.ttf */,
+				AAF40F572A1000680050245F /* Poppins-BoldItalic.ttf */,
+				AAF40F542A1000680050245F /* Poppins-ExtraBold.ttf */,
+				AAF40F4E2A1000680050245F /* Poppins-ExtraBoldItalic.ttf */,
+				AAF40F4D2A1000680050245F /* Poppins-ExtraLight.ttf */,
+				AAF40F502A1000680050245F /* Poppins-ExtraLightItalic.ttf */,
+				AAF40F5B2A1000690050245F /* Poppins-Italic.ttf */,
+				AAF40F4F2A1000680050245F /* Poppins-Light.ttf */,
+				AAF40F512A1000680050245F /* Poppins-LightItalic.ttf */,
+				AAF40F562A1000680050245F /* Poppins-Medium.ttf */,
+				AAF40F4C2A1000680050245F /* Poppins-MediumItalic.ttf */,
+				AAF40F522A1000680050245F /* Poppins-Regular.ttf */,
+				AAF40F5C2A1000690050245F /* Poppins-SemiBold.ttf */,
+				AAF40F532A1000680050245F /* Poppins-SemiBoldItalic.ttf */,
+				AAF40F582A1000680050245F /* Poppins-Thin.ttf */,
+				AAF40F592A1000680050245F /* Poppins-ThinItalic.ttf */,
+				AAF40F4A2A1000410050245F /* Poppins-Black.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		AAF40F7A2A1006CE0050245F /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				AAF40F7B2A1006DA0050245F /* Color.swift */,
+				AAF40F9B2A1018230050245F /* View.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		866AC84C2A113FB700A85AB5 /* HUSTLE HARD */ = {
+		AAF40F2E2A0FFC140050245F /* HUSTLE HARD */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 866AC8612A113FB900A85AB5 /* Build configuration list for PBXNativeTarget "HUSTLE HARD" */;
+			buildConfigurationList = AAF40F432A0FFC150050245F /* Build configuration list for PBXNativeTarget "HUSTLE HARD" */;
 			buildPhases = (
-				866AC8492A113FB700A85AB5 /* Sources */,
-				866AC84A2A113FB700A85AB5 /* Frameworks */,
-				866AC84B2A113FB700A85AB5 /* Resources */,
+				AAF40F2B2A0FFC140050245F /* Sources */,
+				AAF40F2C2A0FFC140050245F /* Frameworks */,
+				AAF40F2D2A0FFC140050245F /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "HUSTLE HARD";
-			productName = "HUSTLE HARD";
-			productReference = 866AC84D2A113FB700A85AB5 /* HUSTLE HARD.app */;
+			packageProductDependencies = (
+				AAF40F762A10037B0050245F /* SnapKit */,
+			);
+			productName = "Fit Me";
+			productReference = AAF40F2F2A0FFC140050245F /* HUSTLE HARD.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		866AC8452A113FB700A85AB5 /* Project object */ = {
+		AAF40F272A0FFC140050245F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1420;
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
-					866AC84C2A113FB700A85AB5 = {
+					AAF40F2E2A0FFC140050245F = {
 						CreatedOnToolsVersion = 14.2;
 					};
 				};
 			};
-			buildConfigurationList = 866AC8482A113FB700A85AB5 /* Build configuration list for PBXProject "HUSTLE HARD" */;
+			buildConfigurationList = AAF40F2A2A0FFC140050245F /* Build configuration list for PBXProject "HUSTLE HARD" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -127,50 +227,74 @@
 				en,
 				Base,
 			);
-			mainGroup = 866AC8442A113FB700A85AB5;
-			productRefGroup = 866AC84E2A113FB700A85AB5 /* Products */;
+			mainGroup = AAF40F262A0FFC140050245F;
+			packageReferences = (
+				AAF40F752A10037B0050245F /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
+			productRefGroup = AAF40F302A0FFC140050245F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				866AC84C2A113FB700A85AB5 /* HUSTLE HARD */,
+				AAF40F2E2A0FFC140050245F /* HUSTLE HARD */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		866AC84B2A113FB700A85AB5 /* Resources */ = {
+		AAF40F2D2A0FFC140050245F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				866AC85D2A113FB900A85AB5 /* LaunchScreen.storyboard in Resources */,
-				866AC85A2A113FB900A85AB5 /* Assets.xcassets in Resources */,
+				AAF40F642A1000690050245F /* Poppins-SemiBoldItalic.ttf in Resources */,
+				AAF40F6B2A1000690050245F /* Poppins-Bold.ttf in Resources */,
+				AAF40F672A1000690050245F /* Poppins-Medium.ttf in Resources */,
+				AAF40F662A1000690050245F /* Poppins-BlackItalic.ttf in Resources */,
+				AAF40F6C2A1000690050245F /* Poppins-Italic.ttf in Resources */,
+				AAF40F6D2A1000690050245F /* Poppins-SemiBold.ttf in Resources */,
+				AAF40F612A1000690050245F /* Poppins-ExtraLightItalic.ttf in Resources */,
+				AAF40F602A1000690050245F /* Poppins-Light.ttf in Resources */,
+				AAF40F6A2A1000690050245F /* Poppins-ThinItalic.ttf in Resources */,
+				AAF40F692A1000690050245F /* Poppins-Thin.ttf in Resources */,
+				AAF40F5F2A1000690050245F /* Poppins-ExtraBoldItalic.ttf in Resources */,
+				AAF40F652A1000690050245F /* Poppins-ExtraBold.ttf in Resources */,
+				AAF40F5E2A1000690050245F /* Poppins-ExtraLight.ttf in Resources */,
+				AAF40F4B2A1000410050245F /* Poppins-Black.ttf in Resources */,
+				AAF40F682A1000690050245F /* Poppins-BoldItalic.ttf in Resources */,
+				AAF40F5D2A1000690050245F /* Poppins-MediumItalic.ttf in Resources */,
+				AAF40F3F2A0FFC150050245F /* LaunchScreen.storyboard in Resources */,
+				AAF40F622A1000690050245F /* Poppins-LightItalic.ttf in Resources */,
+				AAF40F3C2A0FFC150050245F /* Assets.xcassets in Resources */,
+				AAF40F632A1000690050245F /* Poppins-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		866AC8492A113FB700A85AB5 /* Sources */ = {
+		AAF40F2B2A0FFC140050245F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				860945D02A12603100F4C39B /* MydetailsViewController.swift in Sources */,
-				866AC8552A113FB700A85AB5 /* MainTabBarViewController.swift in Sources */,
-				866AC8512A113FB700A85AB5 /* AppDelegate.swift in Sources */,
-				866AC8532A113FB700A85AB5 /* SceneDelegate.swift in Sources */,
-				860945CE2A125DC100F4C39B /* HomeViewController.swift in Sources */,
-				860945D52A1260FE00F4C39B /* DoneExrciseViewController.swift in Sources */,
-				860945D32A12607400F4C39B /* SeachViewController.swift in Sources */,
+				AAF40FA22A1230060050245F /* SelectHeightViewController.swift in Sources */,
+				AAF40F372A0FFC140050245F /* ViewController.swift in Sources */,
+				AAF40FA42A123C030050245F /* SelectWeightViewController.swift in Sources */,
+				AAF40F792A10061B0050245F /* SelectGenderViewController.swift in Sources */,
+				AAF40F332A0FFC140050245F /* AppDelegate.swift in Sources */,
+				AAF40F6F2A1001570050245F /* FontManager.swift in Sources */,
+				AAF40FA02A122B850050245F /* SelectBirthdayViewController.swift in Sources */,
+				AAF40F352A0FFC140050245F /* SceneDelegate.swift in Sources */,
+				AAF40F9C2A1018230050245F /* View.swift in Sources */,
+				AAF40F7C2A1006DA0050245F /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		866AC85B2A113FB900A85AB5 /* LaunchScreen.storyboard */ = {
+		AAF40F3D2A0FFC150050245F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				866AC85C2A113FB900A85AB5 /* Base */,
+				AAF40F3E2A0FFC150050245F /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -178,7 +302,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		866AC85F2A113FB900A85AB5 /* Debug */ = {
+		AAF40F412A0FFC150050245F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -238,7 +362,7 @@
 			};
 			name = Debug;
 		};
-		866AC8602A113FB900A85AB5 /* Release */ = {
+		AAF40F422A0FFC150050245F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -292,25 +416,27 @@
 			};
 			name = Release;
 		};
-		866AC8622A113FB900A85AB5 /* Debug */ = {
+		AAF40F442A0FFC150050245F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JW3AS69T8X;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "HUSTLE HARD/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "lk.nibm.HUSTLE-HARD";
+				PRODUCT_BUNDLE_IDENTIFIER = "lk.nibm.Fit-Me";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -318,25 +444,27 @@
 			};
 			name = Debug;
 		};
-		866AC8632A113FB900A85AB5 /* Release */ = {
+		AAF40F452A0FFC150050245F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JW3AS69T8X;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "HUSTLE HARD/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "lk.nibm.HUSTLE-HARD";
+				PRODUCT_BUNDLE_IDENTIFIER = "lk.nibm.Fit-Me";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -347,25 +475,44 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		866AC8482A113FB700A85AB5 /* Build configuration list for PBXProject "HUSTLE HARD" */ = {
+		AAF40F2A2A0FFC140050245F /* Build configuration list for PBXProject "HUSTLE HARD" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				866AC85F2A113FB900A85AB5 /* Debug */,
-				866AC8602A113FB900A85AB5 /* Release */,
+				AAF40F412A0FFC150050245F /* Debug */,
+				AAF40F422A0FFC150050245F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		866AC8612A113FB900A85AB5 /* Build configuration list for PBXNativeTarget "HUSTLE HARD" */ = {
+		AAF40F432A0FFC150050245F /* Build configuration list for PBXNativeTarget "HUSTLE HARD" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				866AC8622A113FB900A85AB5 /* Debug */,
-				866AC8632A113FB900A85AB5 /* Release */,
+				AAF40F442A0FFC150050245F /* Debug */,
+				AAF40F452A0FFC150050245F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AAF40F752A10037B0050245F /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = exactVersion;
+				version = 5.6.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AAF40F762A10037B0050245F /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AAF40F752A10037B0050245F /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
-	rootObject = 866AC8452A113FB700A85AB5 /* Project object */;
+	rootObject = AAF40F272A0FFC140050245F /* Project object */;
 }
