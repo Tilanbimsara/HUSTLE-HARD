@@ -22,7 +22,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window.makeKeyAndVisible()
         
       //  window.rootViewController =  UINavigationController(rootViewController: SelectHeightViewController())
-        window.rootViewController =  UINavigationController(rootViewController: SelectBirthdayViewController())
+        
+        window.rootViewController =  UINavigationController(rootViewController: HomeViewController())
+        
         self.window = window
     }
 
