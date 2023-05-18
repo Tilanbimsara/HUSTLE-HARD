@@ -25,8 +25,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window.rootViewController =  UINavigationController(rootViewController:
                                                                 
-           LoginViewController())
-           //SelectExerciseViewController())
+        //  SplashViewController())
+          LoginViewController())
         
         self.window = window
     }

@@ -10,6 +10,7 @@
 		868657AD2A168E4000EC9BFE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868657AC2A168E4000EC9BFE /* LoginViewController.swift */; };
 		868657B02A16904E00EC9BFE /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868657AF2A16904E00EC9BFE /* SignUpViewController.swift */; };
 		868657B22A16A20B00EC9BFE /* SelectExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868657B12A16A20B00EC9BFE /* SelectExerciseViewController.swift */; };
+		868657B42A16A9A500EC9BFE /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868657B32A16A9A500EC9BFE /* SplashViewController.swift */; };
 		869C0A752A149365009FDCA2 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869C0A742A149365009FDCA2 /* MainTabBarViewController.swift */; };
 		869C0A772A149C84009FDCA2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869C0A762A149C84009FDCA2 /* HomeViewController.swift */; };
 		869C0A792A149CBE009FDCA2 /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869C0A782A149CBE009FDCA2 /* ProgressViewController.swift */; };
@@ -52,6 +53,7 @@
 		868657AC2A168E4000EC9BFE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		868657AF2A16904E00EC9BFE /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		868657B12A16A20B00EC9BFE /* SelectExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectExerciseViewController.swift; sourceTree = "<group>"; };
+		868657B32A16A9A500EC9BFE /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		869C0A742A149365009FDCA2 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		869C0A762A149C84009FDCA2 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		869C0A782A149CBE009FDCA2 /* ProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 			children = (
 				AAF40F362A0FFC140050245F /* ViewController.swift */,
 				868657AC2A168E4000EC9BFE /* LoginViewController.swift */,
+				868657B32A16A9A500EC9BFE /* SplashViewController.swift */,
 				868657AF2A16904E00EC9BFE /* SignUpViewController.swift */,
 				AAF40F782A10061B0050245F /* SelectGenderViewController.swift */,
 				AAF40F9F2A122B850050245F /* SelectBirthdayViewController.swift */,
@@ -313,6 +316,7 @@
 				869C0A752A149365009FDCA2 /* MainTabBarViewController.swift in Sources */,
 				AAF40F352A0FFC140050245F /* SceneDelegate.swift in Sources */,
 				AAF40F9C2A1018230050245F /* View.swift in Sources */,
+				868657B42A16A9A500EC9BFE /* SplashViewController.swift in Sources */,
 				868657AD2A168E4000EC9BFE /* LoginViewController.swift in Sources */,
 				869C0A7D2A149CEB009FDCA2 /* ProfileViewController.swift in Sources */,
 				AAF40F7C2A1006DA0050245F /* Color.swift in Sources */,
