@@ -20,7 +20,7 @@ class HomeViewController: UIViewController {
     func setupUI() {
         view.backgroundColor = .white
 
-        // Create a header view
+        // header view
         let headerView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 200))
 
         // Add header image view
@@ -33,7 +33,7 @@ class HomeViewController: UIViewController {
             make.edges.equalToSuperview().inset(0) // Fill the entire area
         }
 
-        // Add title label
+       
         let titleLabel = UILabel()
         titleLabel.text = "Exercise List"
         titleLabel.textAlignment = .center
@@ -55,7 +55,7 @@ class HomeViewController: UIViewController {
             make.leading.trailing.bottom.equalToSuperview()
         }
 
-        // Create the table view and set the header view
+        
         tableView = UITableView()
         tableView.delegate = self
         tableView.dataSource = self

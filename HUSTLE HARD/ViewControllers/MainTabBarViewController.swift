@@ -21,6 +21,8 @@ class MainTabBarViewController: UITabBarController {
         let vc4 = UINavigationController(rootViewController: ProfileViewController())
         
         
+        
+        
         vc1.tabBarItem.image = UIImage(systemName: "house.fill")
        
         vc3.tabBarItem.image = UIImage(systemName: "play.fill")

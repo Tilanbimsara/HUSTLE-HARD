@@ -5,10 +5,6 @@
 //  Created by Tilan on 14/5/23.
 //
 
-import Foundation
-import UIKit
-import SnapKit
-
 import UIKit
 import SnapKit
 
@@ -16,20 +12,22 @@ class SelectGenderViewController: UIViewController {
     
     private let selectGenderLabel = UILabel()
     private let stackView = UIStackView()
+    private let continueButton = UIButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         setupSelectGenderLabel()
         setupGenderSelectionItems()
+        setupContinueButton()
     }
     
     private func setupSelectGenderLabel() {
         selectGenderLabel.text = "Select Gender"
-        selectGenderLabel.font = FontManager.shared.customFont(.semiBold, size: 26)
+        selectGenderLabel.font = UIFont.systemFont(ofSize: 26, weight: .semibold)
         view.addSubview(selectGenderLabel)
         
-        selectGenderLabel.snp.makeConstraints { (make) -> Void in
+        selectGenderLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalTo(view.safeAreaLayoutGuide).offset(40)
         }
@@ -40,18 +38,18 @@ class SelectGenderViewController: UIViewController {
         stackView.spacing = 20
         view.addSubview(stackView)
         
-        stackView.snp.makeConstraints { (make) in
+        stackView.snp.makeConstraints { make in
             make.top.equalTo(selectGenderLabel.snp.bottom).offset(20)
             make.leading.trailing.equalToSuperview().inset(20)
         }
         
-        let genderItems = [("🙎🏽‍♂️", "Male"), ("🙎🏽‍♀️", "Female"),]
+        let genderItems = [("🙎🏽‍♂️", "Male"), ("🙎🏽‍♀️", "Female")]
         
         for genderItem in genderItems {
             let emojiLabel = UILabel()
             emojiLabel.text = genderItem.0
             emojiLabel.textAlignment = .center
-            emojiLabel.backgroundColor = .blue
+            emojiLabel.backgroundColor = UIColor(hex: "#0096FF")
             emojiLabel.layer.cornerRadius = 4
             emojiLabel.clipsToBounds = true
             
@@ -72,43 +70,41 @@ class SelectGenderViewController: UIViewController {
             
             stackView.addArrangedSubview(itemView)
             
-            emojiLabel.snp.makeConstraints { (make) in
+            emojiLabel.snp.makeConstraints { make in
                 make.width.height.equalTo(50)
             }
             
-            horizontalStackView.snp.makeConstraints { (make) in
+            horizontalStackView.snp.makeConstraints { make in
                 make.edges.equalToSuperview().inset(UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10))
             }
             
-            itemView.snp.makeConstraints { (make) in
+            itemView.snp.makeConstraints { make in
                 make.width.equalToSuperview()
                 make.height.equalTo(80)
             }
         }
-        
-        let continueButton = UIButton()
+    }
+    
+    private func setupContinueButton() {
         continueButton.setTitle("Continue", for: .normal)
         continueButton.titleLabel?.font = UIFont.systemFont(ofSize: 18)
         continueButton.setTitleColor(.white, for: .normal)
         continueButton.backgroundColor = UIColor(hex: "#0096FF")
         continueButton.layer.cornerRadius = 25
-
+        continueButton.addTarget(self, action: #selector(continueButtonTapped), for: .touchUpInside)
         view.addSubview(continueButton)
-
-        continueButton.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
-            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-40)
-            make.width.equalToSuperview().inset(40)
-            make.height.equalTo(50)
-        }
         
-        view.addSubview(continueButton)
-
         continueButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-40)
             make.width.equalToSuperview().inset(20)
             make.height.equalTo(50)
         }
+    }
+    
+    @objc private func continueButtonTapped() {
+       
+        let selectBirthdayViewController = SelectBirthdayViewController()
+        navigationController?.pushViewController(selectBirthdayViewController, animated: true)
     }
 }
