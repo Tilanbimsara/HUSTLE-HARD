@@ -7,121 +7,125 @@
 import UIKit
 import SnapKit
 
-class HomeViewController: UIViewController, UIScrollViewDelegate {
-    var scrollView: UIScrollView!
-    var pageControl: UIPageControl!
-    var titleLabel: UILabel!
-    var imageViews: [UIImageView] = []
-    
+class HomeViewController: UIViewController {
+    var tableView: UITableView!
+    var exercises: [Exercise] = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        createImageSlideshow()
+        createExercises()
     }
-    
+
     func setupUI() {
         view.backgroundColor = .white
-        
-        let headerView = UIView()
-        headerView.backgroundColor = .systemYellow
-        view.addSubview(headerView)
-        
-        headerView.snp.makeConstraints { make in
-            make.top.left.right.equalToSuperview()
-            make.height.equalTo(view.snp.height).multipliedBy(0.4)
+
+        // Create a header view
+        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 200))
+
+        // Add header image view
+        let headerImageView = UIImageView(image: UIImage(named: "logo"))
+        headerImageView.contentMode = .scaleAspectFill
+        headerImageView.clipsToBounds = true
+        headerView.addSubview(headerImageView)
+
+        headerImageView.snp.makeConstraints { make in
+            make.edges.equalToSuperview().inset(0) // Fill the entire area
         }
-        
-        let logoImageView = UIImageView()
-        logoImageView.image = UIImage(named: "logo")
-        logoImageView.contentMode = .scaleAspectFill
-        logoImageView.clipsToBounds = true
-        headerView.addSubview(logoImageView)
-        
-        logoImageView.snp.makeConstraints { make in
-            make.centerX.centerY.equalToSuperview()
-            make.width.equalTo(headerView.snp.width)
-            make.height.equalTo(headerView.snp.height)
-        }
-        
-        titleLabel = UILabel()
-        titleLabel.text = "Trending"
-        titleLabel.font = UIFont.boldSystemFont(ofSize: 24)
+
+        // Add title label
+        let titleLabel = UILabel()
+        titleLabel.text = "Exercise List"
         titleLabel.textAlignment = .center
-        view.addSubview(titleLabel)
+        titleLabel.font = UIFont(name: "HelveticaNeue-Bold", size: 30)
+        titleLabel.textColor = .white
+        headerView.addSubview(titleLabel)
         
         titleLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalTo(headerView.snp.bottom).offset(20)
+            make.top.equalTo(headerImageView.snp.bottom).offset(8)
         }
-        
-        let startButton = UIButton(type: .system)
-        startButton.setTitle("Start Workout", for: .normal)
-        startButton.titleLabel?.font = UIFont.systemFont(ofSize: 20)
-        startButton.addTarget(self, action: #selector(startButtonTapped), for: .touchUpInside)
-        view.addSubview(startButton)
-        
-        startButton.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
-            make.top.equalTo(titleLabel.snp.bottom).offset(50)
-            make.width.equalTo(200)
-            make.height.equalTo(50)
+
+        let headerLineView = UIView()
+        headerLineView.backgroundColor = .black
+        headerView.addSubview(headerLineView)
+
+        headerLineView.snp.makeConstraints { make in
+            make.height.equalTo(1)
+            make.leading.trailing.bottom.equalToSuperview()
         }
-    }
-    
-    func createImageSlideshow() {
-        scrollView = UIScrollView()
-        scrollView.isPagingEnabled = true
-        scrollView.showsHorizontalScrollIndicator = false
-        scrollView.delegate = self
-        view.addSubview(scrollView)
-        
-        scrollView.snp.makeConstraints { make in
-            make.top.equalTo(titleLabel.snp.bottom).offset(20)
-            make.leading.trailing.equalToSuperview()
-            make.height.equalTo(200) // Adjust the height as needed
-        }
-        
-        let imageNames = ["logooo", "ex2", "logoo"] // Replace with your actual image names
-        
-        for imageName in imageNames {
-            let imageView = UIImageView(image: UIImage(named: imageName))
-            imageView.contentMode = .scaleAspectFill
-            imageView.clipsToBounds = true
-            imageView.translatesAutoresizingMaskIntoConstraints = false
-            
-            scrollView.addSubview(imageView)
-            imageViews.append(imageView)
-            
-            imageView.snp.makeConstraints { make in
-                make.top.bottom.equalToSuperview()
-                make.leading.equalTo(imageViews.last?.snp.trailing ?? scrollView.snp.leading)
-                make.width.equalTo(scrollView.snp.width)
-                make.height.equalTo(scrollView.snp.height)
-            }
-        }
-        
-        let contentWidth = CGFloat(imageViews.count) * view.bounds.width
-        scrollView.contentSize = CGSize(width: contentWidth, height: 200)
-        
-        pageControl = UIPageControl()
-        pageControl.numberOfPages = imageNames.count
-        pageControl.currentPage = 0
-        pageControl.pageIndicatorTintColor = .gray
-        pageControl.currentPageIndicatorTintColor = .black
-        view.addSubview(pageControl)
-        
-        pageControl.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
-            make.top.equalTo(scrollView.snp.bottom).offset(10)
+
+        // Create the table view and set the header view
+        tableView = UITableView()
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(ExerciseTableViewCell.self, forCellReuseIdentifier: "ExerciseCell")
+        tableView.tableHeaderView = headerView // Set the header view
+        view.addSubview(tableView)
+
+        tableView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
         }
     }
-    
-    @objc func startButtonTapped() {
-        // Handle start button action
+
+    func createExercises() {
+        exercises = [
+            Exercise(name: "Exercise 1", imageName: "logooo"),
+            Exercise(name: "Exercise 2", imageName: "logooo"),
+            Exercise(name: "Exercise 3", imageName: "logooo"),
+            Exercise(name: "Exercise 4", imageName: "logooo"),
+            Exercise(name: "Exercise 5", imageName: "logooo"),
+            Exercise(name: "Exercise 6", imageName: "logooo")
+        ]
     }
-    
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        let pageIndex = Int(scrollView.contentOffset.x / scrollView.frame.width)
-        pageControl.currentPage = pageIndex
+}
+
+extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return exercises.count
     }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ExerciseCell", for: indexPath) as! ExerciseTableViewCell
+        let exercise = exercises[indexPath.row]
+        cell.configure(with: exercise)
+        return cell
+    }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 200
+    }
+}
+
+class ExerciseTableViewCell: UITableViewCell {
+    var exerciseImageView: UIImageView!
+
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        setupUI()
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    func setupUI() {
+        exerciseImageView = UIImageView()
+        exerciseImageView.contentMode = .scaleAspectFit
+        exerciseImageView.clipsToBounds = true
+        contentView.addSubview(exerciseImageView)
+
+        exerciseImageView.snp.makeConstraints { make in
+            make.edges.equalToSuperview().inset(1)
+        }
+    }
+
+    func configure(with exercise: Exercise) {
+        exerciseImageView.image = UIImage(named: exercise.imageName)
+    }
+}
+
+struct Exercise {
+    let name: String
+    let imageName: String
 }

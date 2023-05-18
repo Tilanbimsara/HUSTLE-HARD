@@ -86,14 +86,17 @@ private let bmiLabel: UILabel = {
 private let bmiCalculateButton: UIButton = {
     let button = UIButton(type: .system)
     button.setTitle("Calculate BMI", for: .normal)
-    button.titleLabel?.font = UIFont.systemFont(ofSize: 18)
+    button.titleLabel?.font = UIFont.systemFont(ofSize: 15)
     button.tintColor = .white
-    button.backgroundColor = .blue
-    button.layer.cornerRadius = 5
+    button.backgroundColor = UIColor(hex: "#0096FF")
+    button.layer.cornerRadius = 25
     button.addTarget(self, action: #selector(calculateBMI), for: .touchUpInside)
     return button
 }()
 
+    
+    
+    
 override func viewDidLoad() {
     super.viewDidLoad()
     view.backgroundColor = .white

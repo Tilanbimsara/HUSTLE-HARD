@@ -90,16 +90,24 @@ class SelectGenderViewController: UIViewController {
         continueButton.setTitle("Continue", for: .normal)
         continueButton.titleLabel?.font = UIFont.systemFont(ofSize: 18)
         continueButton.setTitleColor(.white, for: .normal)
-        continueButton.backgroundColor = UIColor(hex: "green")
-        continueButton.layer.cornerRadius = 40
-        
+        continueButton.backgroundColor = UIColor(hex: "#0096FF")
+        continueButton.layer.cornerRadius = 25
+
         view.addSubview(continueButton)
-        
-        
+
         continueButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-40)
-            make.width.equalTo(UIScreen.main.bounds.size.width - 40)
+            make.width.equalToSuperview().inset(40)
+            make.height.equalTo(50)
+        }
+        
+        view.addSubview(continueButton)
+
+        continueButton.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-40)
+            make.width.equalToSuperview().inset(20)
             make.height.equalTo(50)
         }
     }
