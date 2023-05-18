@@ -83,8 +83,8 @@ class SelectWeightViewController: UIViewController, UITextFieldDelegate {
         }
         
        
-        let mainTabBarViewController = MainTabBarViewController()
-        navigationController?.pushViewController(mainTabBarViewController, animated: true)
+        let SelectExerciseViewController = SelectExerciseViewController()
+        navigationController?.pushViewController(SelectExerciseViewController, animated: true)
     }
     
     private func showAlert(message: String) {

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		868657AD2A168E4000EC9BFE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868657AC2A168E4000EC9BFE /* LoginViewController.swift */; };
 		868657B02A16904E00EC9BFE /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868657AF2A16904E00EC9BFE /* SignUpViewController.swift */; };
+		868657B22A16A20B00EC9BFE /* SelectExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868657B12A16A20B00EC9BFE /* SelectExerciseViewController.swift */; };
 		869C0A752A149365009FDCA2 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869C0A742A149365009FDCA2 /* MainTabBarViewController.swift */; };
 		869C0A772A149C84009FDCA2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869C0A762A149C84009FDCA2 /* HomeViewController.swift */; };
 		869C0A792A149CBE009FDCA2 /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869C0A782A149CBE009FDCA2 /* ProgressViewController.swift */; };
@@ -50,6 +51,7 @@
 /* Begin PBXFileReference section */
 		868657AC2A168E4000EC9BFE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		868657AF2A16904E00EC9BFE /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		868657B12A16A20B00EC9BFE /* SelectExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectExerciseViewController.swift; sourceTree = "<group>"; };
 		869C0A742A149365009FDCA2 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		869C0A762A149C84009FDCA2 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		869C0A782A149CBE009FDCA2 /* ProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				AAF40F9F2A122B850050245F /* SelectBirthdayViewController.swift */,
 				AAF40FA12A1230060050245F /* SelectHeightViewController.swift */,
 				AAF40FA32A123C030050245F /* SelectWeightViewController.swift */,
+				868657B12A16A20B00EC9BFE /* SelectExerciseViewController.swift */,
 				869C0A742A149365009FDCA2 /* MainTabBarViewController.swift */,
 				869C0A762A149C84009FDCA2 /* HomeViewController.swift */,
 				869C0A782A149CBE009FDCA2 /* ProgressViewController.swift */,
@@ -300,6 +303,7 @@
 				AAF40F372A0FFC140050245F /* ViewController.swift in Sources */,
 				AAF40FA42A123C030050245F /* SelectWeightViewController.swift in Sources */,
 				AAF40F792A10061B0050245F /* SelectGenderViewController.swift in Sources */,
+				868657B22A16A20B00EC9BFE /* SelectExerciseViewController.swift in Sources */,
 				869C0A792A149CBE009FDCA2 /* ProgressViewController.swift in Sources */,
 				868657B02A16904E00EC9BFE /* SignUpViewController.swift in Sources */,
 				869C0A7B2A149CD8009FDCA2 /* ScheduleViewController.swift in Sources */,
