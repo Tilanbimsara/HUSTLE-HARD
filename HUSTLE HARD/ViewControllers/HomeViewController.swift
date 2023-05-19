@@ -11,19 +11,16 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     let exerciseData = [
         Exercise(symbol: "   💪", name: "Push-ups"),
-           Exercise(symbol: "   🏋️‍♀️", name: "Squats"),
-           Exercise(symbol: "   🏃‍♂️", name: "Running"),
-           Exercise(symbol: "   🏊‍♀️", name: "Swimming"),
-           Exercise(symbol: "   🚴‍♂️", name: "Cycling"),
-           Exercise(symbol: "   🧘‍♀️", name: "Yoga"),
-           Exercise(symbol: "   🏋️‍♂️", name: "Weightlifting"),
-           Exercise(symbol: "   ⛹️‍♀️", name: "Basketball"),
-           Exercise(symbol: "   ⚽️", name: "Soccer"),
-           Exercise(symbol: "   🏸", name: "Badminton"),
-           Exercise(symbol: "   🚶‍♀️", name: "Walking"),
+        Exercise(symbol: "   🏋️‍♀️", name: "Squats"),
+        Exercise(symbol: "   🏃‍♂️", name: "Running"),
+        Exercise(symbol: "   🏊‍♀️", name: "Swimming"),
+        Exercise(symbol: "   🚴‍♂️", name: "Cycling"),
+        Exercise(symbol: "   🏋️‍♂️", name: "Weightlifting"),
+        Exercise(symbol: "   ⛹️‍♀️", name: "Basketball"),
+        Exercise(symbol: "   ⚽️", name: "Soccer"),
+        Exercise(symbol: "   🏸", name: "Badminton"),
+        Exercise(symbol: "   🚶‍♀️", name: "Walking")
     ]
-    
-   
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,12 +28,9 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         setupUI()
     }
     
-   
-    
     private func setupUI() {
         view.backgroundColor = .white
         
-       
         let headingContainerView = UIView()
         headingContainerView.backgroundColor = .systemGray6
         view.addSubview(headingContainerView)
@@ -50,7 +44,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         headingLabel.text = "YOUR TODAY SCHEDULE HERE"
         headingLabel.font = UIFont.boldSystemFont(ofSize: 24)
         headingLabel.textColor = .black
-     
         headingLabel.textAlignment = .center
         headingLabel.numberOfLines = 0
         headingContainerView.addSubview(headingLabel)
@@ -58,7 +51,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             make.edges.equalToSuperview().inset(UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16))
         }
         
-       
         let tableView = UITableView()
         tableView.delegate = self
         tableView.dataSource = self
@@ -70,8 +62,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
-   
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return exerciseData.count
     }
@@ -82,11 +72,16 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         cell.textLabel?.text = "\(exercise.symbol) \(exercise.name)"
         cell.textLabel?.font = UIFont.systemFont(ofSize: 23)
-     //   cell.imageView?.image = UIImage(named: "exercise_icon")
+        
         return cell
     }
     
-    // MARK: - Exercise Struct
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let exercise = exerciseData[indexPath.row]
+        
+        let exerciseDetailVC = ExerciseViewController()//(exercise: exercise)
+        navigationController?.pushViewController(exerciseDetailVC, animated: true)
+    }
     
     struct Exercise {
         let symbol: String

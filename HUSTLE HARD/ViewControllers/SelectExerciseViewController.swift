@@ -31,7 +31,15 @@ class SelectExerciseViewController: UIViewController {
         exerciseTypeStackView.spacing = 20
         view.addSubview(exerciseTypeStackView)
         
-        let exerciseTypes = [("", ""),("🏃", "Cardio"), ("💪", "Strength Training"), ("🧘‍♂️", "Yoga"), ("🧘‍♀️", "Pilates"), ("🙆‍♀️", "Stretching")]
+        let exerciseTypes = [
+            ("", ""),
+            ("🏃", "Cardio"),
+            ("💪", "Strength Training"),
+            ("🔥", "Fat Burn"),
+            ("🧘‍♂️", "Yoga"),
+            ("🏋️‍♂️", "Bulk Body"),
+            ("🏋️‍♀️", "Weight Loss")
+        ]
         
         for exerciseType in exerciseTypes {
             let iconLabel = UILabel()

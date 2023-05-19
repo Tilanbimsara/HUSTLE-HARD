@@ -53,7 +53,7 @@ class SplashViewController: UIViewController {
     }
     
     private func transitionToLoginScreen() {
-        let loginViewController = LoginViewController()
+        let loginViewController = StartViewController()
         loginViewController.modalPresentationStyle = .fullScreen
         present(loginViewController, animated: false, completion: nil)
     }

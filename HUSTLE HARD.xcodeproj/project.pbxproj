@@ -16,6 +16,8 @@
 		869C0A792A149CBE009FDCA2 /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869C0A782A149CBE009FDCA2 /* ProgressViewController.swift */; };
 		869C0A7B2A149CD8009FDCA2 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869C0A7A2A149CD8009FDCA2 /* ScheduleViewController.swift */; };
 		869C0A7D2A149CEB009FDCA2 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869C0A7C2A149CEB009FDCA2 /* ProfileViewController.swift */; };
+		86E344952A17DE630013FFDE /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E344942A17DE630013FFDE /* StartViewController.swift */; };
+		86E344972A1805830013FFDE /* ExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E344962A1805830013FFDE /* ExerciseViewController.swift */; };
 		AAF40F332A0FFC140050245F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF40F322A0FFC140050245F /* AppDelegate.swift */; };
 		AAF40F352A0FFC140050245F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF40F342A0FFC140050245F /* SceneDelegate.swift */; };
 		AAF40F372A0FFC140050245F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF40F362A0FFC140050245F /* ViewController.swift */; };
@@ -59,6 +61,8 @@
 		869C0A782A149CBE009FDCA2 /* ProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
 		869C0A7A2A149CD8009FDCA2 /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
 		869C0A7C2A149CEB009FDCA2 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		86E344942A17DE630013FFDE /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		86E344962A1805830013FFDE /* ExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewController.swift; sourceTree = "<group>"; };
 		AAF40F2F2A0FFC140050245F /* HUSTLE HARD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HUSTLE HARD.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAF40F322A0FFC140050245F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AAF40F342A0FFC140050245F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -142,8 +146,9 @@
 			isa = PBXGroup;
 			children = (
 				AAF40F362A0FFC140050245F /* ViewController.swift */,
-				868657AC2A168E4000EC9BFE /* LoginViewController.swift */,
 				868657B32A16A9A500EC9BFE /* SplashViewController.swift */,
+				86E344942A17DE630013FFDE /* StartViewController.swift */,
+				868657AC2A168E4000EC9BFE /* LoginViewController.swift */,
 				868657AF2A16904E00EC9BFE /* SignUpViewController.swift */,
 				AAF40F782A10061B0050245F /* SelectGenderViewController.swift */,
 				AAF40F9F2A122B850050245F /* SelectBirthdayViewController.swift */,
@@ -155,6 +160,7 @@
 				869C0A782A149CBE009FDCA2 /* ProgressViewController.swift */,
 				869C0A7A2A149CD8009FDCA2 /* ScheduleViewController.swift */,
 				869C0A7C2A149CEB009FDCA2 /* ProfileViewController.swift */,
+				86E344962A1805830013FFDE /* ExerciseViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -303,11 +309,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				AAF40FA22A1230060050245F /* SelectHeightViewController.swift in Sources */,
+				86E344972A1805830013FFDE /* ExerciseViewController.swift in Sources */,
 				AAF40F372A0FFC140050245F /* ViewController.swift in Sources */,
 				AAF40FA42A123C030050245F /* SelectWeightViewController.swift in Sources */,
 				AAF40F792A10061B0050245F /* SelectGenderViewController.swift in Sources */,
 				868657B22A16A20B00EC9BFE /* SelectExerciseViewController.swift in Sources */,
 				869C0A792A149CBE009FDCA2 /* ProgressViewController.swift in Sources */,
+				86E344952A17DE630013FFDE /* StartViewController.swift in Sources */,
 				868657B02A16904E00EC9BFE /* SignUpViewController.swift in Sources */,
 				869C0A7B2A149CD8009FDCA2 /* ScheduleViewController.swift in Sources */,
 				AAF40F332A0FFC140050245F /* AppDelegate.swift in Sources */,

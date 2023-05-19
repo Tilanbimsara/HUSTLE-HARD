@@ -11,7 +11,7 @@ import SnapKit
 class SelectHeightViewController: UIViewController, UITextFieldDelegate {
     
     private let titleLabel = UILabel()
-    private let unitSegmentedControl = UISegmentedControl(items: ["KG"])
+    private let unitSegmentedControl = UISegmentedControl(items: ["Cm"])
     private let heightTextField = UITextField()
     private let continueButton = UIButton(type: .system)
     
