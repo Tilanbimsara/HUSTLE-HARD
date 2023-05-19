@@ -7,125 +7,89 @@
 import UIKit
 import SnapKit
 
-class HomeViewController: UIViewController {
-    var tableView: UITableView!
-    var exercises: [Exercise] = []
-
+class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    let exerciseData = [
+        Exercise(symbol: "   💪", name: "Push-ups"),
+           Exercise(symbol: "   🏋️‍♀️", name: "Squats"),
+           Exercise(symbol: "   🏃‍♂️", name: "Running"),
+           Exercise(symbol: "   🏊‍♀️", name: "Swimming"),
+           Exercise(symbol: "   🚴‍♂️", name: "Cycling"),
+           Exercise(symbol: "   🧘‍♀️", name: "Yoga"),
+           Exercise(symbol: "   🏋️‍♂️", name: "Weightlifting"),
+           Exercise(symbol: "   ⛹️‍♀️", name: "Basketball"),
+           Exercise(symbol: "   ⚽️", name: "Soccer"),
+           Exercise(symbol: "   🏸", name: "Badminton"),
+           Exercise(symbol: "   🚶‍♀️", name: "Walking"),
+    ]
+    
+   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setupUI()
-        createExercises()
     }
-
-    func setupUI() {
+    
+   
+    
+    private func setupUI() {
         view.backgroundColor = .white
-
-        // header view
-        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 200))
-
-        // Add header image view
-        let headerImageView = UIImageView(image: UIImage(named: "logo"))
-        headerImageView.contentMode = .scaleAspectFill
-        headerImageView.clipsToBounds = true
-        headerView.addSubview(headerImageView)
-
-        headerImageView.snp.makeConstraints { make in
-            make.edges.equalToSuperview().inset(0) // Fill the entire area
-        }
-
+        
        
-        let titleLabel = UILabel()
-        titleLabel.text = "Exercise List"
-        titleLabel.textAlignment = .center
-        titleLabel.font = UIFont(name: "HelveticaNeue-Bold", size: 30)
-        titleLabel.textColor = .white
-        headerView.addSubview(titleLabel)
-        
-        titleLabel.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
-            make.top.equalTo(headerImageView.snp.bottom).offset(8)
+        let headingContainerView = UIView()
+        headingContainerView.backgroundColor = .systemGray6
+        view.addSubview(headingContainerView)
+        headingContainerView.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(44)
+            make.leading.trailing.equalToSuperview()
+            make.height.equalTo(100)
         }
-
-        let headerLineView = UIView()
-        headerLineView.backgroundColor = .black
-        headerView.addSubview(headerLineView)
-
-        headerLineView.snp.makeConstraints { make in
-            make.height.equalTo(1)
-            make.leading.trailing.bottom.equalToSuperview()
-        }
-
         
-        tableView = UITableView()
+        let headingLabel = UILabel()
+        headingLabel.text = "YOUR TODAY SCHEDULE HERE"
+        headingLabel.font = UIFont.boldSystemFont(ofSize: 24)
+        headingLabel.textColor = .black
+     
+        headingLabel.textAlignment = .center
+        headingLabel.numberOfLines = 0
+        headingContainerView.addSubview(headingLabel)
+        headingLabel.snp.makeConstraints { make in
+            make.edges.equalToSuperview().inset(UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16))
+        }
+        
+       
+        let tableView = UITableView()
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(ExerciseTableViewCell.self, forCellReuseIdentifier: "ExerciseCell")
-        tableView.tableHeaderView = headerView // Set the header view
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "ExerciseCell")
         view.addSubview(tableView)
-
         tableView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.top.equalTo(headingContainerView.snp.bottom)
+            make.leading.trailing.bottom.equalToSuperview()
         }
     }
-
-    func createExercises() {
-        exercises = [
-            Exercise(name: "Exercise 1", imageName: "logooo"),
-            Exercise(name: "Exercise 2", imageName: "logooo"),
-            Exercise(name: "Exercise 3", imageName: "logooo"),
-            Exercise(name: "Exercise 4", imageName: "logooo"),
-            Exercise(name: "Exercise 5", imageName: "logooo"),
-            Exercise(name: "Exercise 6", imageName: "logooo")
-        ]
-    }
-}
-
-extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+    
+   
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return exercises.count
+        return exerciseData.count
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ExerciseCell", for: indexPath) as! ExerciseTableViewCell
-        let exercise = exercises[indexPath.row]
-        cell.configure(with: exercise)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ExerciseCell", for: indexPath)
+        let exercise = exerciseData[indexPath.row]
+        
+        cell.textLabel?.text = "\(exercise.symbol) \(exercise.name)"
+        cell.textLabel?.font = UIFont.systemFont(ofSize: 23)
+     //   cell.imageView?.image = UIImage(named: "exercise_icon")
         return cell
     }
-
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
+    
+    // MARK: - Exercise Struct
+    
+    struct Exercise {
+        let symbol: String
+        let name: String
     }
-}
-
-class ExerciseTableViewCell: UITableViewCell {
-    var exerciseImageView: UIImageView!
-
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        setupUI()
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
-    func setupUI() {
-        exerciseImageView = UIImageView()
-        exerciseImageView.contentMode = .scaleAspectFit
-        exerciseImageView.clipsToBounds = true
-        contentView.addSubview(exerciseImageView)
-
-        exerciseImageView.snp.makeConstraints { make in
-            make.edges.equalToSuperview().inset(1)
-        }
-    }
-
-    func configure(with exercise: Exercise) {
-        exerciseImageView.image = UIImage(named: exercise.imageName)
-    }
-}
-
-struct Exercise {
-    let name: String
-    let imageName: String
 }
