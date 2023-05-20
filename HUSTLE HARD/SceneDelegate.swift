@@ -27,9 +27,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                                                                 
         // SplashViewController())
       //    ExerciseViewController())
-    StartViewController())
+   StartViewController())
         
-     //   MainTabBarViewController())
+     //  MainTabBarViewController())
         
         self.window = window
     }

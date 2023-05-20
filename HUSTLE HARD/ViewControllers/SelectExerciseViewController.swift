@@ -8,17 +8,29 @@
 import UIKit
 import SnapKit
 
-class SelectExerciseViewController: UIViewController {
+class SelectExerciseViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
     private let titleLabel = UILabel()
-    private let exerciseTypeStackView = UIStackView()
+    private let exerciseTypePickerView = UIPickerView()
     private let continueButton = UIButton()
+    
+    private let exerciseTypes = [
+        "Cardio",
+        "Strength Training",
+        "Fat Burn",
+        "Yoga",
+        "Bulk Body",
+        "Weight Loss"
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         setupViews()
         setupConstraints()
+        
+        exerciseTypePickerView.dataSource = self
+        exerciseTypePickerView.delegate = self
     }
     
     private func setupViews() {
@@ -27,37 +39,7 @@ class SelectExerciseViewController: UIViewController {
         titleLabel.textColor = .black
         view.addSubview(titleLabel)
         
-        exerciseTypeStackView.axis = .vertical
-        exerciseTypeStackView.spacing = 20
-        view.addSubview(exerciseTypeStackView)
-        
-        let exerciseTypes = [
-            ("", ""),
-            ("🏃", "Cardio"),
-            ("💪", "Strength Training"),
-            ("🔥", "Fat Burn"),
-            ("🧘‍♂️", "Yoga"),
-            ("🏋️‍♂️", "Bulk Body"),
-            ("🏋️‍♀️", "Weight Loss")
-        ]
-        
-        for exerciseType in exerciseTypes {
-            let iconLabel = UILabel()
-            iconLabel.text = exerciseType.0
-            iconLabel.font = UIFont.systemFont(ofSize: 24)
-            iconLabel.textColor = .black
-            
-            let exerciseTypeLabel = UILabel()
-            exerciseTypeLabel.text = exerciseType.1
-            exerciseTypeLabel.font = UIFont.systemFont(ofSize: 18)
-            exerciseTypeLabel.textColor = .black
-            
-            let horizontalStackView = UIStackView(arrangedSubviews: [iconLabel, exerciseTypeLabel])
-            horizontalStackView.spacing = 10
-            horizontalStackView.alignment = .center
-            
-            exerciseTypeStackView.addArrangedSubview(horizontalStackView)
-        }
+        view.addSubview(exerciseTypePickerView)
         
         continueButton.setTitle("Continue", for: .normal)
         continueButton.titleLabel?.font = UIFont.systemFont(ofSize: 18)
@@ -74,7 +56,7 @@ class SelectExerciseViewController: UIViewController {
             make.top.equalTo(view.safeAreaLayoutGuide).offset(40)
         }
         
-        exerciseTypeStackView.snp.makeConstraints { make in
+        exerciseTypePickerView.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(40)
             make.top.equalTo(titleLabel.snp.bottom).offset(20)
             make.trailing.equalToSuperview().inset(40)
@@ -87,6 +69,24 @@ class SelectExerciseViewController: UIViewController {
             make.height.equalTo(50)
         }
     }
+    
+    // MARK: - UIPickerViewDataSource
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return exerciseTypes.count
+    }
+    
+    // MARK: - UIPickerViewDelegate
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return exerciseTypes[row]
+    }
+    
+    // MARK: - Actions
     
     @objc private func continueButtonTapped() {
         let mainTabBarController = MainTabBarViewController()
