@@ -16,9 +16,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         Exercise(symbol: "🏊‍♀️", name: "Swimming"),
         Exercise(symbol: "🚴‍♂️", name: "Cycling"),
         Exercise(symbol: "🏋️‍♂️", name: "Weightlifting"),
-        Exercise(symbol: "⛹️‍♀️", name: "Basketball"),
         Exercise(symbol: "⚽️", name: "Soccer"),
-        Exercise(symbol: "🏸", name: "Badminton"),
         Exercise(symbol: "🚶‍♀️", name: "Walking")
     ]
     

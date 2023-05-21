@@ -37,7 +37,7 @@ private let birthdayLabel: UILabel = {
 
 private let birthdayValueLabel: UILabel = {
     let label = UILabel()
-    label.text = "01/01/1990"
+    label.text = "30/09/1998"
     label.font = UIFont.systemFont(ofSize: 18)
     label.textColor = .gray
     return label
@@ -171,7 +171,7 @@ private func setupUI() {
 }
 
 @objc private func calculateBMI() {
-    let height = 1.80 // Height in meters
+    let height = 1.60 // Height in meters
     let weight = 75.0 // Weight in kilograms
     let bmi = weight / (height * height)
     bmiLabel.text = String(format: "BMI: %.1f", bmi)
