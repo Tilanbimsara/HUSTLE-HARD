@@ -21,12 +21,12 @@ private let tableView: UITableView = {
 }()
 
 private var exerciseSchedules: [String: [String]] = [
-    "Monday": ["Exercise 1", "Exercise 2"],
-    "Tuesday": ["Exercise 3"],
-    "Wednesday": ["Exercise 4", "Exercise 5", "Exercise 6"],
-    "Thursday": ["Exercise 7"],
-    "Friday": ["Exercise 8", "Exercise 9"],
-    "Saturday": ["Exercise 10", "Exercise 11", "Exercise 12"],
+    "Monday": ["Squats", "Front press","Back Press"],
+    "Tuesday": ["Squats", "Running", "Walking"],
+    "Wednesday": ["swimming", "Walking"],
+    "Thursday": ["Back Press"],
+    "Friday": ["Squats", "Front press"],
+    "Saturday": ["Squats", "Running", "Front press"],
     "Sunday": ["Rest Day"]
 ]
 
