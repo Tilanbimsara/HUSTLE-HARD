@@ -16,7 +16,7 @@ class MainTabBarViewController: UITabBarController {
         view.backgroundColor = .systemBackground
         
         let vc1 = UINavigationController(rootViewController: HomeViewController())
-        let vc3 = UINavigationController(rootViewController: ProgressViewController())
+        let vc3 = UINavigationController(rootViewController: PlayerViewController())
         let vc2 = UINavigationController(rootViewController: ScheduleViewController())
         let vc4 = UINavigationController(rootViewController: ProfileViewController())
         

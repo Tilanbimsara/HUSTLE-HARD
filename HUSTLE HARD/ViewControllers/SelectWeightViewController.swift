@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import SwiftKeychainWrapper
 
 class SelectWeightViewController: UIViewController, UITextFieldDelegate {
     
@@ -47,7 +48,7 @@ class SelectWeightViewController: UIViewController, UITextFieldDelegate {
     
     private func setupConstraints() {
         titleLabel.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(40)
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(100)
             make.centerX.equalToSuperview()
         }
         
@@ -76,15 +77,28 @@ class SelectWeightViewController: UIViewController, UITextFieldDelegate {
     }
     
     @objc private func continueButtonTapped() {
-     
+        //  validation
         guard let weightText = weightTextField.text, !weightText.isEmpty else {
             showAlert(message: "Please enter your weight")
             return
         }
         
-       
-        let SelectExerciseViewController = SelectExerciseViewController()
-        navigationController?.pushViewController(SelectExerciseViewController, animated: true)
+        let numericRegex = "^[0-9]+$"
+        let numericPredicate = NSPredicate(format: "SELF MATCHES %@", numericRegex)
+        
+        if !numericPredicate.evaluate(with: weightText) {
+            showAlert(message: "Please enter a valid weight")
+            return
+        }
+        
+        let weightKey = "weightKey"
+        let isSet = KeychainWrapper.standard.set(weightText, forKey: weightKey)
+        if isSet {
+            let selectExerciseViewController = SelectExerciseViewController()
+            navigationController?.pushViewController(selectExerciseViewController, animated: true)
+        } else {
+            showAlert(message: "Failed to store weight data")
+        }
     }
     
     private func showAlert(message: String) {

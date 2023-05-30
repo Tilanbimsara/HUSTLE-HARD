@@ -1,17 +1,11 @@
-//
-//  SelectHeightViewController.swift
-//  HUSTLE HARD
-//
-//  Created by Tilan on 14/5/23.
-//
-
 import UIKit
 import SnapKit
+import SwiftKeychainWrapper
 
 class SelectHeightViewController: UIViewController, UITextFieldDelegate {
     
     private let titleLabel = UILabel()
-    private let unitSegmentedControl = UISegmentedControl(items: ["Cm"])
+    private let unitSegmentedControl = UISegmentedControl(items: ["m"])
     private let heightTextField = UITextField()
     private let continueButton = UIButton(type: .system)
     
@@ -47,7 +41,7 @@ class SelectHeightViewController: UIViewController, UITextFieldDelegate {
     
     private func setupConstraints() {
         titleLabel.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(40)
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(100)
             make.centerX.equalToSuperview()
         }
         
@@ -70,16 +64,6 @@ class SelectHeightViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    private func createContinueButton() -> UIButton {
-        let button = UIButton()
-        button.setTitle("Continue", for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 18)
-        button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = UIColor(hex: "#0096FF")
-        button.layer.cornerRadius = 25
-        return button
-    }
-    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
@@ -92,9 +76,23 @@ class SelectHeightViewController: UIViewController, UITextFieldDelegate {
             return
         }
         
-     
-        let selectWeightViewController = SelectWeightViewController()
-        navigationController?.pushViewController(selectWeightViewController, animated: true)
+        let decimalRegex = "^[0-9]+(\\.[0-9]+)?$"
+        let decimalPredicate = NSPredicate(format: "SELF MATCHES %@", decimalRegex)
+        
+        if !decimalPredicate.evaluate(with: heightText) {
+            showAlert(message: "Please enter a valid height")
+            return
+        }
+        
+        // Store height data in Keychain
+        let heightKey = "heightKey"
+        let isSet = KeychainWrapper.standard.set(heightText, forKey: heightKey)
+        if isSet {
+            let selectWeightViewController = SelectWeightViewController()
+            navigationController?.pushViewController(selectWeightViewController, animated: true)
+        } else {
+            showAlert(message: "Failed to store height data")
+        }
     }
     
     private func showAlert(message: String) {

@@ -53,7 +53,7 @@ class SelectExerciseViewController: UIViewController, UIPickerViewDataSource, UI
     private func setupConstraints() {
         titleLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalTo(view.safeAreaLayoutGuide).offset(40)
+            make.top.equalTo(view.safeAreaLayoutGuide).offset(100)
         }
         
         exerciseTypePickerView.snp.makeConstraints { make in
@@ -70,7 +70,7 @@ class SelectExerciseViewController: UIViewController, UIPickerViewDataSource, UI
         }
     }
     
-    // MARK: - UIPickerViewDataSource
+    // UIPickerViewDataSource
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -80,13 +80,17 @@ class SelectExerciseViewController: UIViewController, UIPickerViewDataSource, UI
         return exerciseTypes.count
     }
     
-    // MARK: - UIPickerViewDelegate
+    //  UIPickerViewDelegate
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return exerciseTypes[row]
     }
     
-    // MARK: - Actions
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        UserManager.fitnessGoal = exerciseTypes[row]
+    }
+    
+    //  Actions
     
     @objc private func continueButtonTapped() {
         let mainTabBarController = MainTabBarViewController()

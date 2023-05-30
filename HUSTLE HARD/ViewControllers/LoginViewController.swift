@@ -56,7 +56,7 @@ class LoginViewController: UIViewController {
     private func setupConstraints() {
         titleLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalTo(view.safeAreaLayoutGuide).offset(40)
+            make.top.equalTo(view.safeAreaLayoutGuide).offset(150)
         }
         
         usernameTextField.snp.makeConstraints { make in

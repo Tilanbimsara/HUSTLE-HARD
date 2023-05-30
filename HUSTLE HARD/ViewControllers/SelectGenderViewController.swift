@@ -7,12 +7,15 @@
 
 import UIKit
 import SnapKit
+import SwiftKeychainWrapper
 
 class SelectGenderViewController: UIViewController {
     
     private let selectGenderLabel = UILabel()
     private let stackView = UIStackView()
     private let continueButton = UIButton()
+    
+    private let genderItems = [("🙎🏽‍♂️", "Male"), ("🙎🏽‍♀️", "Female")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +32,7 @@ class SelectGenderViewController: UIViewController {
         
         selectGenderLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalTo(view.safeAreaLayoutGuide).offset(40)
+            make.top.equalTo(view.safeAreaLayoutGuide).offset(100)
         }
     }
     
@@ -43,9 +46,7 @@ class SelectGenderViewController: UIViewController {
             make.leading.trailing.equalToSuperview().inset(20)
         }
         
-        let genderItems = [("🙎🏽‍♂️", "Male"), ("🙎🏽‍♀️", "Female")]
-        
-        for genderItem in genderItems {
+        for (index, genderItem) in genderItems.enumerated() {
             let emojiLabel = UILabel()
             emojiLabel.text = genderItem.0
             emojiLabel.textAlignment = .center
@@ -68,6 +69,10 @@ class SelectGenderViewController: UIViewController {
             itemView.layer.borderWidth = 2
             itemView.layer.borderColor = UIColor.gray.cgColor
             
+            // Add tap gesture recognizer to the itemView
+            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(genderItemTapped(_:)))
+            itemView.addGestureRecognizer(tapGesture)
+            
             stackView.addArrangedSubview(itemView)
             
             emojiLabel.snp.makeConstraints { make in
@@ -82,6 +87,9 @@ class SelectGenderViewController: UIViewController {
                 make.width.equalToSuperview()
                 make.height.equalTo(80)
             }
+            
+            // Assign the tag to the itemView to identify the selected gender item
+            itemView.tag = index
         }
     }
     
@@ -102,8 +110,32 @@ class SelectGenderViewController: UIViewController {
         }
     }
     
+    @objc private func genderItemTapped(_ sender: UITapGestureRecognizer) {
+        guard let itemView = sender.view else { return }
+        
+        // Reset the selection styles for all gender items
+        for subview in stackView.arrangedSubviews {
+            if let itemView = subview as? UIView {
+                itemView.layer.borderColor = UIColor.gray.cgColor
+            }
+        }
+        
+        // Highlight the selected gender item
+        itemView.layer.borderColor = UIColor.blue.cgColor
+        
+        // Store the selected gender in Keychain
+        let genderKey = "genderKey"
+        let selectedGender = genderItems[itemView.tag].1
+        let isSet = KeychainWrapper.standard.set(selectedGender, forKey: genderKey)
+        
+        if isSet {
+            print("Gender stored in Keychain: \(selectedGender)")
+        } else {
+            print("Failed to store gender data")
+        }
+    }
+    
     @objc private func continueButtonTapped() {
-       
         let selectBirthdayViewController = SelectBirthdayViewController()
         navigationController?.pushViewController(selectBirthdayViewController, animated: true)
     }

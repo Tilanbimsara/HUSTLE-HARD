@@ -8,9 +8,7 @@ import UIKit
 
 class StartViewController: UIViewController {
     
-  //  let customBlue = UIColor(red: 28.0/255.0, green: 34.0/255.0, blue: 39.0/255.0, alpha: 1)
-    //let customYellow = UIColor(red: 225.0/255.0, green: 254.0/255.0, blue: 17.0/255.0, alpha: 1)
-    
+  
     let topImage : UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -22,7 +20,7 @@ class StartViewController: UIViewController {
     let firstLabel : UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-//        label.font = .systemFont(ofSize: 28, weight: .bold)
+
         label.font = UIFont(name: "Poppins-Bold", size: 28)
         label.textColor = .white
         label.textAlignment = .center
@@ -33,7 +31,6 @@ class StartViewController: UIViewController {
     let secLabel : UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-//        label.font = .systemFont(ofSize: 16, weight: .light)
         label.font = UIFont(name: "Poppins-Light", size: 22)
         label.textColor = .white
         label.textAlignment = .center
@@ -52,7 +49,6 @@ class StartViewController: UIViewController {
         button.setTitle("Start Building Your Body", for: .normal)
         button.layer.cornerRadius = 10
         button.backgroundColor = UIColor(hex: "#FFFFFF")
-//        button.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
         button.titleLabel?.font = UIFont(name: "Poppins-SemiBold", size: 16)
         button.setTitleColor(UIColor.black, for: .normal)
         return button

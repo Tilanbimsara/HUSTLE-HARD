@@ -7,114 +7,143 @@
 
 import UIKit
 import SnapKit
+import FirebaseFirestore
 
-class ScheduleViewController: UIViewController {
+class ScheduleViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    var exerciseData: [[Exercise]] = []
+    var firestore: Firestore!
+    var tableView: UITableView!
 
-private let daysOfWeek = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+    override func viewDidLoad() {
+        super.viewDidLoad()
+       // title = "Your Suggest Shedule"
+        
 
-private let tableView: UITableView = {
-    let tableView = UITableView()
-    tableView.separatorStyle = .none
-    tableView.register(ExerciseScheduleTableViewCell.self, forCellReuseIdentifier: ExerciseScheduleTableViewCell.identifier)
-    return tableView
-}()
-
-private var exerciseSchedules: [String: [String]] = [
-    "Monday": ["Squats", "Front press","Back Press"],
-    "Tuesday": ["Squats", "Running", "Walking"],
-    "Wednesday": ["swimming", "Walking"],
-    "Thursday": ["Back Press"],
-    "Friday": ["Squats", "Front press"],
-    "Saturday": ["Squats", "Running", "Front press"],
-    "Sunday": ["Rest Day"]
-]
-
-override func viewDidLoad() {
-    super.viewDidLoad()
-    view.backgroundColor = .white
-    setupTableView()
-}
-
-private func setupTableView() {
-    tableView.delegate = self
-    tableView.dataSource = self
-    view.addSubview(tableView)
-    
-    tableView.snp.makeConstraints { make in
-        make.edges.equalToSuperview()
+        setupFirestore()
+        fetchExerciseData()
+        setupUI()
     }
-}
-}
 
-extension ScheduleViewController: UITableViewDelegate, UITableViewDataSource {
-func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-return daysOfWeek.count
-}
+    private func setupFirestore() {
+        firestore = Firestore.firestore()
+    }
 
+    private func fetchExerciseData() {
+        let exerciseCollectionNames = ["day-one", "day-two", "day-three", "day-four", "day-five", "day-six", "day-seven"]
+        exerciseCollectionNames.forEach { collectionName in
+            let exercisesCollection = firestore.collection(collectionName)
+            exercisesCollection.getDocuments { [weak self] snapshot, error in
+                guard let snapshot = snapshot else {
+                    // Error handling
+                    return
+                }
 
-func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: ExerciseScheduleTableViewCell.identifier, for: indexPath) as! ExerciseScheduleTableViewCell
-    let dayOfWeek = daysOfWeek[indexPath.row]
-    let exercises = exerciseSchedules[dayOfWeek] ?? []
-    cell.configure(dayOfWeek: dayOfWeek, exercises: exercises)
-    return cell
-}
+                var exercises: [Exercise] = []
 
-func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-    return 120
-}
-}
+                for document in snapshot.documents {
+                    let data = document.data()
 
-class ExerciseScheduleTableViewCell: UITableViewCell {
-static let identifier = "ExerciseScheduleTableViewCell"
+                    if let exerciseName = data["name"] as? String,
+                       let exerciseDescription = data["des"] as? String,
+                       let exerciseImageName = data["pic"] as? String {
+                        let exercise = Exercise(symbol: "", name: exerciseName, description: exerciseDescription, imageName: exerciseImageName)
+                        exercises.append(exercise)
+                    }
+                }
 
+                self?.exerciseData.append(exercises)
 
-private let dayLabel: UILabel = {
-    let label = UILabel()
-    label.font = UIFont.boldSystemFont(ofSize: 18)
-    return label
-}()
+                // Update table view with exercise data
+                DispatchQueue.main.async { [weak self] in
+                    self?.tableView.reloadData()
+                }
+            }
+        }
+    }
 
-private let exercisesLabel: UILabel = {
-    let label = UILabel()
-    label.numberOfLines = 0
-    label.textColor = .gray
-    label.font = UIFont.systemFont(ofSize: 16)
-    return label
-}()
+    private func setupUI() {
+        view.backgroundColor = .white
 
-override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-    super.init(style: style, reuseIdentifier: reuseIdentifier)
-    contentView.addSubview(dayLabel)
-    contentView.addSubview(exercisesLabel)
-    
-    dayLabel.snp.makeConstraints { make in
-        make.leading.equalToSuperview().offset(16)
-        make.top.equalToSuperview().offset(8)
+        tableView = UITableView()
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "ExerciseCell")
+        tableView.backgroundColor = .clear
+        view.addSubview(tableView)
+        tableView.snp.makeConstraints { make in
+            make.edges.equalToSuperview().inset(UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16))
+        }
+        
+        
     }
     
-    exercisesLabel.snp.makeConstraints { make in
-        make.leading.equalTo(dayLabel)
-        make.trailing.equalToSuperview().offset(-16)
-        make.top.equalTo(dayLabel.snp.bottom).offset(8)
-        make.bottom.equalToSuperview().offset(-8)
-    }
     
-    contentView.layer.cornerRadius = 8
-    contentView.backgroundColor = .white
-    contentView.layer.shadowColor = UIColor.black.cgColor
-    contentView.layer.shadowOffset = CGSize(width: 0, height: 2)
-    contentView.layer.shadowRadius = 4
-    contentView.layer.shadowOpacity = 0.2
-}
 
-required init?(coder: NSCoder) {
-    fatalError("init(coder:) has not been implemented")
-}
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return exerciseData[section].count
+    }
 
-func configure(dayOfWeek: String, exercises: [String]) {
-    dayLabel.text = dayOfWeek
-    exercisesLabel.text = exercises.joined(separator: "\n")
-}
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return exerciseData.count
+    }
+
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        let dayNumber = section + 1
+        return "Day \(dayNumber)"
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ExerciseCell", for: indexPath)
+        let exercise = exerciseData[indexPath.section][indexPath.row]
+
+        if let image = UIImage(named: exercise.imageName) {
+            let resizedImage = resizeToSize(image, CGSize(width: 60, height: 60))
+            cell.imageView?.image = roundedImage(resizedImage)
+        }
+
+        cell.textLabel?.text = "\(exercise.symbol) \(exercise.name)"
+        cell.textLabel?.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
+        cell.textLabel?.textColor = .black
+        cell.detailTextLabel?.text = exercise.description
+        cell.detailTextLabel?.font = UIFont.systemFont(ofSize: 14)
+        cell.detailTextLabel?.textColor = UIColor(hex: "#757575")
+        cell.backgroundColor = .clear
+        cell.selectionStyle = .none
+
+        let separatorView = UIView()
+        separatorView.backgroundColor = UIColor(hex: "#E0E0E0")
+        cell.addSubview(separatorView)
+        separatorView.snp.makeConstraints { make in
+            make.leading.trailing.bottom.equalToSuperview()
+            make.height.equalTo(1)
+        }
+
+        return cell
+    }
+
+    struct Exercise {
+        let symbol: String
+        let name: String
+        let description: String
+        let imageName: String
+    }
+
+    func resizeToSize(_ image: UIImage, _ size: CGSize) -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(size, false, UIScreen.main.scale)
+        image.draw(in: CGRect(origin: .zero, size: size))
+        let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return resizedImage ?? image
+    }
+
+    func roundedImage(_ image: UIImage) -> UIImage {
+        let renderer = UIGraphicsImageRenderer(size: image.size)
+        let roundedImage = renderer.image { context in
+            let path = UIBezierPath(roundedRect: CGRect(origin: .zero, size: image.size), cornerRadius: image.size.width / 4)
+            path.addClip()
+            image.draw(in: CGRect(origin: .zero, size: image.size))
+        }
+        return roundedImage.withRenderingMode(image.renderingMode)
+    }
 }

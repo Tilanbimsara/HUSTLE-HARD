@@ -154,7 +154,7 @@ class SignUpViewController: UIViewController {
     }
     
     private func isValidEmail(_ email: String) -> Bool {
-        // Pemail validation
+        // pemail validation
        
         
        

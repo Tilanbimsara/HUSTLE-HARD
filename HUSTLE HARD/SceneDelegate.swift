@@ -25,11 +25,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window.rootViewController =  UINavigationController(rootViewController:
                                                                 
-        // SplashViewController())
-      //    ExerciseViewController())
-   StartViewController())
-        
-   //   MainTabBarViewController())
+       
+                                                                
+  StartViewController())
+//MainTabBarViewController())
+            //SplashViewController())
+ 
         
         self.window = window
     }
